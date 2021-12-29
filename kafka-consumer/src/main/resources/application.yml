@@ -1,0 +1,30 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123abc*
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+  application:
+    name: kafka-consumer
+
+server:
+  port : 8081
+
+topic:
+  message: orders_new
+  
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:20000/eureka}

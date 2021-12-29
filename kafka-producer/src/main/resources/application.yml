@@ -1,0 +1,20 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+  application:
+    name: kafka-producer
+
+server:
+  port : 8080
+
+topic:
+  message: orders_new
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:20000/eureka}
