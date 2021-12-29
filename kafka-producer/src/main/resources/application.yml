@@ -9,7 +9,8 @@ spring:
     name: kafka-producer
 
 server:
-  port : 8080
+  port : ${PORT:0}
+  
 
 topic:
   message: orders_new
@@ -18,3 +19,5 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_SERVER:http://localhost:20000/eureka}
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
