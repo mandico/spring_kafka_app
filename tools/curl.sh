@@ -5,5 +5,5 @@ do
     date=$(date '+%Y-%m-%d %HH:%MM:%ss')
     curl -X POST -H "Content-Type: application/json" \
     -d '{"message": "Kafka Message '"$i"' '"$date"'"}' \
-    http://localhost:8080/message
+    http://localhost:8000/message
 done

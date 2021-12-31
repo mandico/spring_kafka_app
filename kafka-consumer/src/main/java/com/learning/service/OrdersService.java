@@ -17,7 +17,7 @@ public class OrdersService {
 	@Value("${topic.message}")
 	private String topic_name;
 
-	@Value("${spring.application.name}")
+	@Value("${eureka.instance.instance-id}")
 	private String instance;
 
 	@Autowired
